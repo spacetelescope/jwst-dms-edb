@@ -21,13 +21,17 @@ Use
 
         from jwedb import edb_interface
         edb_interface.query_single_mnemonic(mnemonic_identifier,
-        start_time, end_time)
+        start_time, end_time, token=token)
 
     Required arguments:
 
     ``mnemonic_identifier`` - String representation of a mnemonic name.
     ``start_time`` - astropy.time.Time instance
     ``end_time`` - astropy.time.Time instance
+
+    Optional arguments:
+
+    ``token`` - String token for MAST authentication.
 
 Notes
 -----
