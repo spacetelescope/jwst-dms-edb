@@ -7,12 +7,12 @@ Documentation for jwedb
 To take advantage of all ``jwedb`` funcionalities, the user has to submit a valid MAST token.
 
 .. toctree::
-  :maxdepth: 2
+  :maxdepth: 3
   :caption: Contents:
 
   jwedb <jwedb/index.rst>
 
-.. note:: ``jwedb/`` is a spin-off the ``jwql`` project.
+.. note:: ``jwedb`` is a spin-off the ``jwql`` project.
 
 
 * :ref:`genindex`
