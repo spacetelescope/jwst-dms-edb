@@ -14,6 +14,11 @@ Python interface to the JWST DMS Engineering Database
 Python interface to the JWST DMS Engineering Database
 
 
+Installation
+------------
+::
+    pip install jwedb
+
 
 Example usage
 -------------
@@ -24,10 +29,9 @@ to be provided. Please visit https://auth.mast.stsci.edu/info to generate a toke
 One way to store it locally is using .netrc file in the local home directory.
 If the MAST token is stored in the following format within .netrc, the code below will work.
 
-machine mast
-    login <username>
-
-    password <token>
+:machine mast
+    :login <username>
+    :password <token>
 
 Code::
 
