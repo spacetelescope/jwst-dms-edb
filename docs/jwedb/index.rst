@@ -11,7 +11,7 @@ Functionalities
 
 Where to Find jwedb
 ==========================
-pysiaf is hosted and developed at https://github.com/spacetelescope/jwedb
+jwedb is hosted and developed at https://github.com/spacetelescope/jwst-dms-edb
 
 
 Installation
@@ -26,7 +26,7 @@ jwedb is available on `PyPI <https://pypi.org/project/jwedb/>`_ .
 `pip install jwedb`
 
 Clone the repository:
-`git clone https://github.com/spacetelescope/jwedb`
+`git clone https://github.com/spacetelescope/jwst-dms-edb`
 Install jwedb:
 `cd jwedb`
 `python setup.py install` or
@@ -40,7 +40,7 @@ Example usage:
 
 Reporting Issues / Contributing
 ===============================
-Do you have feedback and feature requests? Is there something missing you would like to see? Please open a new issue or new pull request at https://github.com/spacetelescope/jwedb for bugs, feedback, or new features you would like to see. If there is an issue you would like to work on, please leave a comment and we will be happy to assist. New contributions and contributors are very welcome! This package follows the STScI `Code of Conduct <https://github.com/spacetelescope/jwedb/blob/master/CODE_OF_CONDUCT.md>`_ strives to provide a welcoming community to all of our users and contributors.
+Do you have feedback and feature requests? Is there something missing you would like to see? Please open a new issue or new pull request at https://github.com/spacetelescope/jwst-dms-edb for bugs, feedback, or new features you would like to see. If there is an issue you would like to work on, please leave a comment and we will be happy to assist. New contributions and contributors are very welcome! This package follows the STScI `Code of Conduct <https://github.com/spacetelescope/jwedb/blob/master/CODE_OF_CONDUCT.md>`_ strives to provide a welcoming community to all of our users and contributors.
 
 Coding and other guidelines
 ###########################
