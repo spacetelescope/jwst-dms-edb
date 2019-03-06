@@ -24,17 +24,16 @@ to be provided. Please visit https://auth.mast.stsci.edu/info to generate a toke
 One way to store it locally is using .netrc file in the local home directory.
 If the MAST token is stored in the following format within .netrc, the code below will work.
 
-    machine mast
+machine mast
+    login <username>
 
-        login <username>
-
-        password <token>
+    password <token>
 
 Code::
 
     import netrc
     from astropy.time import Time
-    from jewdb.edb_interface import query_single_mnemonic
+    from jwedb.edb_interface import query_single_mnemonic
 
     # get MAST token from the .netrc file in the home directory
     host = 'mast'
