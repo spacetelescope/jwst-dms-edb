@@ -57,9 +57,9 @@ Code::
 Contributing
 ------------
 
-jwedb is open source
+``jwedb`` is open source
 
-Please see the `jwql` contribution guide for how to contribute to jwedb:
+Please see the ``jwql`` contribution guide for how to contribute to jwedb:
 https://github.com/spacetelescope/jwql#software-contributions
 
 
