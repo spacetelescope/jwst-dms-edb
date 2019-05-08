@@ -37,6 +37,25 @@ import pytest
 
 from ..edb_interface import mnemonic_inventory, query_single_mnemonic, is_valid_mnemonic
 
+@pytest.mark.xfail(raises=(RuntimeError, FileNotFoundError, TypeError))
+def test_enpty_query():
+    """Test the case when a query does not return data."""
+    # get MAST token from the .netrc file in the home directory
+    host = 'mast'
+    secrets = netrc.netrc()
+    mast_token = secrets.authenticators(host)[2]
+
+    mnemonic_identifier = 'SA_ZFGOUTFOV'
+    start_time = Time(2016.0, format='jyear')
+    end_time = Time(2016.001, format='jyear')
+
+    data, meta, info = query_single_mnemonic(mnemonic_identifier, start_time, end_time,
+                                             token=mast_token)
+
+    # assert that None's are returned
+    assert data is None
+    assert meta is None
+
 
 def test_invalid_query():
     """Test that the mnemonic query for an unauthorized user fails."""
@@ -47,7 +66,7 @@ def test_invalid_query():
     end_time = Time('2019-01-16 00:01:00.000', format='iso')
     try:
         query_single_mnemonic(mnemonic_identifier, start_time, end_time, token='1234')
-    except RuntimeError:
+    except ValueError:
         pass
 
 
@@ -72,9 +91,10 @@ def test_query_single_mnemonic():
     mast_token = secrets.authenticators(host)[2]
 
     mnemonic_identifier = 'SA_ZFGOUTFOV'
-    start_time = Time(2018.0, format='decimalyear')
-    end_time = Time(2018.1, format='decimalyear')
+    start_time = Time(2018.0, format='jyear')
+    end_time = Time(2018.1, format='jyear')
 
     data, meta, info = query_single_mnemonic(mnemonic_identifier, start_time, end_time,
                                              token=mast_token)
     assert len(data) == meta['paging']['rows']
+

@@ -52,6 +52,7 @@ Dependencies
 
 """
 from functools import lru_cache
+import warnings
 
 from astropy.table import Table
 from astropy.time import Time
@@ -147,7 +148,8 @@ def process_mast_service_request_result(result, data_as_table=True):
         else:
             data = json_data['data'][0]
     except KeyError:
-        raise RuntimeError('Query did not return any data.')
+        warnings.warn('Query did not return any data. Returning None')
+        return None, None
 
     # collect meta data
     meta = {}
