@@ -37,6 +37,7 @@ import pytest
 
 from ..edb_interface import mnemonic_inventory, query_single_mnemonic, is_valid_mnemonic
 
+
 @pytest.mark.xfail(raises=(RuntimeError, FileNotFoundError, TypeError))
 def test_enpty_query():
     """Test the case when a query does not return data."""
@@ -97,4 +98,3 @@ def test_query_single_mnemonic():
     data, meta, info = query_single_mnemonic(mnemonic_identifier, start_time, end_time,
                                              token=mast_token)
     assert len(data) == meta['paging']['rows']
-
