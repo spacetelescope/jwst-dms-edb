@@ -37,8 +37,13 @@ Notes
 -----
     This module is built on top of ``astroquery.mast`` and uses
     JWST-specific MAST services.
+
     The user has to provide a valid MAST authentication token
     or be authenticated.
+
+    When querying mnemonic values, the underlying MAST service returns
+    data that include the datapoint preceding the requested start time
+    and the datapoint that follows the requested end time.
 
 References
 ----------
@@ -186,6 +191,10 @@ def query_mnemonic_info(mnemonic_identifier, token=None):
 
 def query_single_mnemonic(mnemonic_identifier, start_time, end_time, token=None):
     """Query DMS EDB to get the mnemonic readings in a time interval.
+
+    The underlying MAST service returns data that include the
+    datapoint preceding the requested start time and the datapoint
+    that follows the requested end time.
 
     Parameters
     ----------
