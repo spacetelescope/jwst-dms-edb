@@ -30,12 +30,34 @@ Use
 
 """
 import netrc
+import os
 
 from astropy.time import Time
 from astroquery.mast import Mast
 import pytest
 
 from ..edb_interface import mnemonic_inventory, query_single_mnemonic, is_valid_mnemonic
+
+
+@pytest.mark.skipif(("TRAVIS" in os.environ and os.environ["TRAVIS"] == "true"),
+                    reason="Skipping this test on Travis CI.")
+def test_empty_query():
+    """Test the case when a query does not return data."""
+    # get MAST token from the .netrc file in the home directory
+    host = 'mast'
+    secrets = netrc.netrc()
+    mast_token = secrets.authenticators(host)[2]
+
+    mnemonic_identifier = 'SA_ZFGOUTFOV'
+    start_time = Time(2016.0, format='jyear')
+    end_time = Time(2016.001, format='jyear')
+
+    data, meta, info = query_single_mnemonic(mnemonic_identifier, start_time, end_time,
+                                             token=mast_token)
+
+    # assert that None's are returned
+    assert data is None
+    assert meta is None
 
 
 def test_invalid_query():
@@ -45,10 +67,11 @@ def test_invalid_query():
     mnemonic_identifier = 'IMIR_HK_ICE_SEC_VOLT4'
     start_time = Time('2019-01-16 00:00:00.000', format='iso')
     end_time = Time('2019-01-16 00:01:00.000', format='iso')
-    try:
+
+    with pytest.raises(ValueError) as error_message:
         query_single_mnemonic(mnemonic_identifier, start_time, end_time, token='1234')
-    except RuntimeError:
-        pass
+
+    assert 'You are not authenticated in MAST' in str(error_message)
 
 
 def test_is_valid_mnemonic():
@@ -63,7 +86,8 @@ def test_mnemonic_inventory():
     assert len(all_mnemonics) > 1000
 
 
-@pytest.mark.xfail(raises=(RuntimeError, FileNotFoundError, TypeError))
+@pytest.mark.skipif(("TRAVIS" in os.environ and os.environ["TRAVIS"] == "true"),
+                    reason="Skipping this test on Travis CI.")
 def test_query_single_mnemonic():
     """Test the query of a mnemonic over a given time range."""
     # get MAST token from the .netrc file in the home directory
@@ -72,8 +96,8 @@ def test_query_single_mnemonic():
     mast_token = secrets.authenticators(host)[2]
 
     mnemonic_identifier = 'SA_ZFGOUTFOV'
-    start_time = Time(2018.0, format='decimalyear')
-    end_time = Time(2018.1, format='decimalyear')
+    start_time = Time(2018.0, format='jyear')
+    end_time = Time(2018.1, format='jyear')
 
     data, meta, info = query_single_mnemonic(mnemonic_identifier, start_time, end_time,
                                              token=mast_token)
