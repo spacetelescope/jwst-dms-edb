@@ -74,4 +74,4 @@ deploy:
     secure: HmMuhca+cy5151ik7cet/tJplT1SAgPRkzrz0VviEGKyDjR2kq0jvz4uJxX75/6meyoQZFa3eRky+3GRkq8dgG9H/qilbOucJKysE9HfbUfXiIFR9iJiQQ6Bfv1Ana+a1BbI7wUma0wNI1psed28PlJLb/R+IMU0RWxsow7eHdm4jztk7w4dN1B/OuYxPkuBTMkillAFEo+67ZmBnhRc06Pri5zOSb8KzdBDx/Dc2sTum7/O3ApF8Ffqjt1ekYoTUUhakbk7YbCql1iSd3v+EPqIQZs83Neh+wNuVW5TSjXrC79ncHy6ykWBqK66rBV/xhMzD+eokt7xrs1DW7LUYEB/Q5/uNgysnRhqMMZlO1KVJbvku4u2yIGhPv8/GqqoflBtnuajOBOfc6qwBuCA54bgjXZQCTKkmk/d7XVDNVXKIU/BRzpsox8rSs4+fVsEbPeUU90VM77qXoSncXUDm3Hx5xR86Zvn61p5CpdmvPaKP+SVJF4/9x+4Vj3gh34D0T4AfLJYXb344kNvl9OSaVqem+lozINNOKe3yUzwroy/AMU9N0znxl82XqbcWRnCPMK0fUS8HCMwe3FiHM+jsEbfljNBoOk/S+azrUe8wMSPv/UNjtibnmBX07e8/bgLMvW7KV1n+jkYmyCH59hycRyE/ArmlNZjDitVgGSjCyQ=
   on:
     branch: master
-    tags: true
+    tags: false
