@@ -68,10 +68,11 @@ def test_invalid_query():
     start_time = Time('2019-01-16 00:00:00.000', format='iso')
     end_time = Time('2019-01-16 00:01:00.000', format='iso')
 
-    with pytest.raises(ValueError) as error_message:
+    with pytest.raises((ValueError, RuntimeError)) as error_message:
         query_single_mnemonic(mnemonic_identifier, start_time, end_time, token='1234')
 
-    assert 'You are not authenticated in MAST' in str(error_message)
+    assert 'You are not authenticated in MAST' in str(error_message.value) or \
+           'Must be logged in as an authorized user' in str(error_message.value)
 
 
 def test_is_valid_mnemonic():
