@@ -1,8 +1,2 @@
-See http://journals.aas.org/authors/references.html#Software on how to
-cite software.
-
-GitHub has Zenodo DOI integration:
-https://guides.github.com/activities/citable-code/
-
-Also see https://swcarpentry.github.io/git-novice/12-citation/
-for further reading.
+If you find this package useful, please consider citing the Zenodo record using the DOI badge
+available from the landing page.

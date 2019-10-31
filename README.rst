@@ -11,6 +11,9 @@ Python interface to the JWST DMS Engineering Database
     :target: http://www.astropy.org
     :alt: Powered by Astropy Badge
 
+.. image:: https://zenodo.org/badge/173367421.svg
+   :target: https://zenodo.org/badge/latestdoi/173367421
+
 Python interface to the JWST DMS Engineering Database
 
 
@@ -62,6 +65,10 @@ Contributing
 Please see the ``jwql`` contribution guide for how to contribute to jwedb:
 https://github.com/spacetelescope/jwql#software-contributions
 
+Citation
+--------
+
+If you find this package useful, please consider citing the Zenodo record using the DOI badge above.
 
 
 License
