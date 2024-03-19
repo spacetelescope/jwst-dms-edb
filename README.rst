@@ -1,3 +1,11 @@
+THIS REPOSITORY IS DEPRECATED AND BEING ARCHIVED
+------------------------------------------------
+Please see the current reference for interacting with the JWST Engineering Database: https://outerspace.stsci.edu/display/MASTDOCS/Engineering+Data
+
+
+-----------------------------
+
+
 Python interface to the JWST DMS Engineering Database
 -----------------------------------------------------
 
@@ -57,13 +65,7 @@ Code::
 
     data.pprint()
 
-Contributing
-------------
 
-``jwedb`` is open source
-
-Please see the ``jwql`` contribution guide for how to contribute to jwedb:
-https://github.com/spacetelescope/jwql#software-contributions
 
 Citation
 --------
