@@ -9,9 +9,6 @@ Please see the current reference for interacting with the JWST Engineering Datab
 Python interface to the JWST DMS Engineering Database
 -----------------------------------------------------
 
-.. image:: https://travis-ci.org/spacetelescope/jwst-dms-edb.svg?branch=master
-    :target: https://travis-ci.org/spacetelescope/jwst-dms-edb
-
 .. image:: https://badge.fury.io/py/jwedb.svg
     :target: https://badge.fury.io/py/jwedb
 
